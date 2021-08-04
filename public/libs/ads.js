@@ -1,5 +1,3 @@
-console.log("Helllloooooo: ", window.AicactusSDK);
-
 var sdk = window.AicactusSDK || {};
 
 var adUnits = [
