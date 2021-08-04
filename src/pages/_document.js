@@ -36,7 +36,7 @@ class MyDocument extends Document {
                 process.env.NODE_ENV === "development"
                   ? "http://localhost:9081/aicactus-sdk.development.min.js"
                   : "https://cdn.aicactus.io/aicactus-sdk.min.js"
-              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: "reco"}),AicactusSDK.callMethodsFromContainer()});`,
+              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"cdb714a7-8f99-480f-9bfb-01d9116a12b3@web", type: "adnetwork"}),AicactusSDK.callMethodsFromContainer()});`,
             }}
           ></script>
         </Head>
