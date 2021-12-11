@@ -10,24 +10,24 @@ function Header({ containerType, headerStyle }) {
 
   const [abResult, setAbResult] = React.useState("");
 
-  const initABTesting = React.useCallback(async (id) => {
-    const res = await window.AicactusSDK.getFeatureById(
-      FEATURE_IDS.ABTesting,
-      "",
-      {},
-      id // "emfe"/"huybe"
-    );
-    if (res?.data?.results?.data?.[0]) {
-      setAbResult(res.data.results.data[0]);
-    }
-  }, []);
+  // const initABTesting = React.useCallback(async (id) => {
+  //   const res = await window.AicactusSDK.getFeatureById(
+  //     FEATURE_IDS.ABTesting,
+  //     "",
+  //     {},
+  //     id // "emfe"/"huybe"
+  //   );
+  //   if (res?.data?.results?.data?.[0]) {
+  //     setAbResult(res.data.results.data[0]);
+  //   }
+  // }, []);
 
-  React.useEffect(() => {
-    let timer = setTimeout(() => {
-      initABTesting(userId);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [userId]);
+  // React.useEffect(() => {
+  //   let timer = setTimeout(() => {
+  //     initABTesting(userId);
+  //   }, 500);
+  //   return () => clearTimeout(timer);
+  // }, [userId]);
 
   const renderStyleClass = (type) => {
     switch (type) {
