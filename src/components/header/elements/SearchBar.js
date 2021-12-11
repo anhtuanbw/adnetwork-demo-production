@@ -30,51 +30,51 @@ function SearchBarMobile({ fillData, placeholder }) {
     dispatch(setGlobalSearch(debouncedSearchTerm));
   }, [debouncedSearchTerm]);
 
-  const init = useCallback(async (id) => {
-    await delay(1000);
-    const res = await window.AicactusSDK.getSearchData(
-      FEATURE_IDS.keywords,
-      id
-    );
-    if (res?.results && res?.results?.keyword_trends) {
-      const { keyword_trends = [] } = res.results;
-      const opts = keyword_trends.map((name) => ({
-        value: name,
-      }));
-      setSearchOptions(opts);
-      dispatch(setGlobalProducts([]));
-    }
-  }, []);
+  // const init = useCallback(async (id) => {
+  //   await delay(1000);
+  //   const res = await window.AicactusSDK.getSearchData(
+  //     FEATURE_IDS.keywords,
+  //     id
+  //   );
+  //   if (res?.results && res?.results?.keyword_trends) {
+  //     const { keyword_trends = [] } = res.results;
+  //     const opts = keyword_trends.map((name) => ({
+  //       value: name,
+  //     }));
+  //     setSearchOptions(opts);
+  //     dispatch(setGlobalProducts([]));
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    init(globalState.userId);
-  }, [init, globalState.userId]);
+  // useEffect(() => {
+  //   init(globalState.userId);
+  // }, [init, globalState.userId]);
 
-  useEffect(() => {
-    if (debouncedSearchTerm) {
-      async function searchProducts(id) {
-        const res = await window.AicactusSDK.getFeatureById(
-          FEATURE_IDS.keywords,
-          "keywords",
-          {
-            keywords: [debouncedSearchTerm],
-          },
-          id
-        );
-        if (res?.data?.results?.data?.length) {
-          const data = res.data.results.data;
-          const opts = data.map(({ name }) => ({
-            value: name,
-          }));
-          setSearchOptions(opts);
-          dispatch(setGlobalProducts(data));
-        }
-      }
-      searchProducts(globalState.userId);
-    } else {
-      init(globalState.userId);
-    }
-  }, [debouncedSearchTerm, init, globalState.userId]);
+  // useEffect(() => {
+  //   if (debouncedSearchTerm) {
+  //     async function searchProducts(id) {
+  //       const res = await window.AicactusSDK.getFeatureById(
+  //         FEATURE_IDS.keywords,
+  //         "keywords",
+  //         {
+  //           keywords: [debouncedSearchTerm],
+  //         },
+  //         id
+  //       );
+  //       if (res?.data?.results?.data?.length) {
+  //         const data = res.data.results.data;
+  //         const opts = data.map(({ name }) => ({
+  //           value: name,
+  //         }));
+  //         setSearchOptions(opts);
+  //         dispatch(setGlobalProducts(data));
+  //       }
+  //     }
+  //     searchProducts(globalState.userId);
+  //   } else {
+  //     init(globalState.userId);
+  //   }
+  // }, [debouncedSearchTerm, init, globalState.userId]);
 
   const renderAutoFillItem = () => {
     let product = getProductsByCategory(fillData, globalState.category);
