@@ -29,6 +29,17 @@ class MyDocument extends Document {
           <link href="/assets/css/elegant-icon.css" rel="stylesheet" />
           <link href="/assets/css/icomoon-icon.css" rel="stylesheet" />
 
+          {/* <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
+              !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="2USB4QpeS5bgMOr1XiRXaqCtc6u3Bhce";;analytics.SNIPPET_VERSION="4.15.3";
+              analytics.load("2USB4QpeS5bgMOr1XiRXaqCtc6u3Bhce");
+              analytics.page();
+              }}();`,
+            }}
+          ></script> */}
+
           <script
             type="text/javascript"
             dangerouslySetInnerHTML={{
@@ -36,9 +47,20 @@ class MyDocument extends Document {
                 process.env.NODE_ENV === "development"
                   ? "http://localhost:9081/aicactus-sdk.development.min.js"
                   : "https://cdn.aicactus.io/aicactus-sdk.min.js"
-              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"66ce201f-f265-4a60-b389-691ae988b32e@web", type: "adnetwork"}),AicactusSDK.callMethodsFromContainer()});`,
+              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"1043c917-bdb5-4c92-b3cf-9e9cbd43b1b2@web", type: "adnetwork"}),AicactusSDK.callMethodsFromContainer()});`,
             }}
           ></script>
+
+          {/* <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `window.AicactusSDK||(window.AicactusSDK={}),AicactusSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
+                process.env.NODE_ENV === "development"
+                  ? "http://localhost:9081/aicactus-sdk.development.min.js"
+                  : "https://cdn.aicactus.io/aicactus-sdk.min.js"
+              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"d758b4be-2e8b-4208-85bb-a4a69df6f16c@web", type: "adnetwork"}),AicactusSDK.callMethodsFromContainer()});`,
+            }}
+          ></script> */}
 
           {/* <script
             type="text/javascript"
