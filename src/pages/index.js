@@ -17,16 +17,31 @@ import productData from "../data/product.json";
 export default function Home() {
   const router = useRouter();
 
+  React.useEffect(() => {
+    const sdk = window.AicactusSDK || {};
+    var adUnits = [
+      {
+        inventoryId: 619,
+        placementId: "display_ads",
+      },
+      {
+        inventoryId: 620,
+        placementId: "display_ads_1",
+      },
+    ];
+    sdk.requestAds(adUnits);
+  }, []);
+
   return (
     <LayoutOne title="Home">
-      <Head>
+      {/* <Head>
         <script type="text/javascript" src="/libs/ads.js"></script>
-      </Head>
+      </Head> */}
       <div className="shop-layout">
         <Container type={"fluid"}>
           <Row gutter={30}>
             <Col className="gutter-row" xs={24} lg={4}>
-              <div className="shop-sidebar">123131</div>
+              <div className="shop-sidebar"></div>
             </Col>
             <Col className="gutter-row" xs={24} lg={4}>
               <div id="display_ads"></div>

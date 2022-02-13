@@ -1,5 +1,4 @@
 var sdk = window.AicactusSDK || {};
-console.log("🚀 ~ file: ads.js ~ line 2 ~ sdk", sdk);
 
 var adUnits = [
   {
@@ -20,4 +19,4 @@ var adUnits = [
   // },
 ];
 
-sdk.requestAds(adUnits);
+// sdk.requestAds(adUnits);
