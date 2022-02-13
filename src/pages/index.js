@@ -29,7 +29,7 @@ export default function Home() {
         placementId: "display_ads_1",
       },
     ];
-    sdk.requestAds(adUnits);
+    sdk?.requestAds(adUnits);
   }, []);
 
   return (
