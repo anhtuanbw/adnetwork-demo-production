@@ -30,6 +30,10 @@ export default function Home() {
     //   },
     // ];
     // sdk?.requestAds(adUnits);
+
+    if (window.AicactusSDK) {
+      console.log("win: ", window.AicactusSDK);
+    }
   }, []);
 
   return (

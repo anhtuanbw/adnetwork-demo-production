@@ -1,17 +1,26 @@
-var sdk = window.AicactusSDK || {};
-console.log("🚀 ~ file: ads.js ~ line 2 ~ sdk", sdk);
-
-var adUnits = [
-  {
-    inventoryId: 619,
-    placementId: "display_ads",
-  },
-];
-
-sdk.requestAds(adUnits);
-sdk.requestAds([
-  {
-    inventoryId: 620,
-    placementId: "display_ads_1",
-  },
-]);
+if (window.AicactusSDK) {
+  var sdk = window.AicactusSDK || {};
+  var adUnits = [
+    {
+      inventoryId: 1,
+      placementId: "display_ads",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
+    {
+      inventoryId: 2,
+      placementId: "display_ads_1",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
+  ];
+  sdk.requestAds(adUnits);
+}
