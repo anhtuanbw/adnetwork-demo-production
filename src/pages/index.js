@@ -18,19 +18,6 @@ export default function Home() {
   const router = useRouter();
 
   React.useEffect(() => {
-    // const sdk = window.AicactusSDK || {};
-    // var adUnits = [
-    //   {
-    //     inventoryId: 619,
-    //     placementId: "display_ads",
-    //   },
-    //   {
-    //     inventoryId: 620,
-    //     placementId: "display_ads_1",
-    //   },
-    // ];
-    // sdk?.requestAds(adUnits);
-
     window.addEventListener("load", () => {
       console.log("window loaded!");
       console.log("SDK: ", window.AicactusSDK);

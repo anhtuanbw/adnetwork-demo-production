@@ -52,7 +52,7 @@ window.onload = function () {
         placementId: "display_ads_4",
         options: {
           video: {
-            ima: true,
+            ima: false,
           },
           debug: true,
         },
