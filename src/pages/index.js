@@ -59,6 +59,9 @@ export default function Home() {
             <Col className="gutter-row">
               <div id="display_ads_4"></div>
             </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_5"></div>
+            </Col>
           </Row>
         </Container>
       </div>

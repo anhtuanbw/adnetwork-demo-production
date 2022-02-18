@@ -51,6 +51,16 @@ if (window.AicactusSDK) {
         debug: true,
       },
     },
+    {
+      inventoryId: 20,
+      placementId: "display_ads_5",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
   ];
   sdk.requestAds(adUnits);
 }
