@@ -21,6 +21,36 @@ if (window.AicactusSDK) {
         debug: true,
       },
     },
+    {
+      inventoryId: 8,
+      placementId: "display_ads_2",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
+    {
+      inventoryId: 9,
+      placementId: "display_ads_3",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
+    {
+      inventoryId: 10,
+      placementId: "display_ads_4",
+      options: {
+        video: {
+          ima: false,
+        },
+        debug: true,
+      },
+    },
   ];
   sdk.requestAds(adUnits);
 }

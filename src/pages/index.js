@@ -44,17 +44,20 @@ export default function Home() {
       <div className="shop-layout">
         <Container type={"fluid"}>
           <Row gutter={30}>
-            <Col className="gutter-row" xs={24} lg={4}>
-              <div className="shop-sidebar"></div>
-            </Col>
-            <Col className="gutter-row" xs={24} lg={4}>
+            <Col className="gutter-row">
               <div id="display_ads"></div>
             </Col>
-            <Col className="gutter-row" xs={24} lg={4}>
+            <Col className="gutter-row">
               <div id="display_ads_1"></div>
             </Col>
-            <Col className="gutter-row" xs={24} lg={4}>
+            <Col className="gutter-row">
               <div id="display_ads_2"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_3"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_4"></div>
             </Col>
           </Row>
         </Container>
