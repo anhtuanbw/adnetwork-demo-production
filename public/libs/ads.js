@@ -18,6 +18,11 @@ window.onload = function () {
         options: {
           video: {
             ima: true,
+            poster:
+              "https://github.com/googleads/videojs-ima/blob/main/examples/posters/bbb_poster.jpg",
+            source:
+              "//commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4",
           },
           debug: true,
         },
@@ -58,6 +63,11 @@ window.onload = function () {
         options: {
           video: {
             ima: true,
+            poster:
+              "https://github.com/googleads/videojs-ima/blob/main/examples/posters/bbb_poster.jpg",
+            source:
+              "//commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4",
           },
           debug: true,
         },
