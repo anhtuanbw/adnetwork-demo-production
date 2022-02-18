@@ -17,7 +17,7 @@ window.onload = function () {
         placementId: "display_ads_1",
         options: {
           video: {
-            ima: false,
+            ima: true,
           },
           debug: true,
         },
@@ -47,7 +47,7 @@ window.onload = function () {
         placementId: "display_ads_4",
         options: {
           video: {
-            ima: false,
+            ima: true,
           },
           debug: true,
         },
@@ -57,7 +57,7 @@ window.onload = function () {
         placementId: "display_ads_5",
         options: {
           video: {
-            ima: false,
+            ima: true,
           },
           debug: true,
         },
