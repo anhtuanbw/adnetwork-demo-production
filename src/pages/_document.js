@@ -40,6 +40,17 @@ class MyDocument extends Document {
             }}
           ></script> */}
 
+          {/* <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `window.AicactusSDK||(window.AicactusSDK={}),AicactusSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
+                process.env.NODE_ENV === "development"
+                  ? "http://localhost:9081/aicactus-sdk.development.min.js"
+                  : "https://cdn.aicactus.io/aicactus-sdk.min.js"
+              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"1c8f8a44-1d08-46f1-8e99-1b1da65d3769@web", type: ["adnetwork"]}),AicactusSDK.callMethodsFromContainer()});`,
+            }}
+          ></script> */}
+
           <script
             type="text/javascript"
             dangerouslySetInnerHTML={{
@@ -47,7 +58,7 @@ class MyDocument extends Document {
                 process.env.NODE_ENV === "development"
                   ? "http://localhost:9081/aicactus-sdk.development.min.js"
                   : "https://cdn.aicactus.io/aicactus-sdk.min.js"
-              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["adnetwork"]}),AicactusSDK.callMethodsFromContainer()});`,
+              }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["adnetwork"], debug: true}),AicactusSDK.callMethodsFromContainer()});`,
             }}
           ></script>
 
