@@ -22,59 +22,55 @@ export default function Home() {
 
   React.useEffect(() => {
     window.addEventListener("load", async () => {
-      if (window.AicactusSDK) {
-        const sdk = window.AicactusSDK || {};
+      const sdk = window.AicactusSDK || {};
 
-        const adUnits = [
-          {
-            inventoryId: 833,
-            placementId: "display_ads_1",
-            options: {
-              video: {
-                player: true,
-              },
+      const adUnits = [
+        {
+          inventoryId: 833,
+          placementId: "display_ads_1",
+          options: {
+            video: {
+              player: true,
+              loop: true,
+              controls: false,
             },
           },
-          {
-            inventoryId: 835,
-            placementId: "display_ads_2",
-          },
-          {
-            inventoryId: 836,
-            placementId: "display_ads_3",
-            options: {
-              video: {
-                player: true,
-              },
+        },
+        {
+          inventoryId: 835,
+          placementId: "display_ads_2",
+        },
+        {
+          inventoryId: 836,
+          placementId: "display_ads_3",
+          options: {
+            video: {
+              player: true,
             },
           },
-          {
-            inventoryId: 837,
-            placementId: "display_ads_4",
-          },
-          {
-            inventoryId: 838,
-            placementId: "display_ads_5",
-          },
-          {
-            inventoryId: 839,
-            placementId: "display_ads_6",
-          },
-          {
-            inventoryId: 840,
-            placementId: "display_ads_7",
-          },
-          {
-            inventoryId: 841,
-            placementId: "display_ads_8",
-          },
-        ];
-        const res = await sdk.requestAds(adUnits);
-        console.log(
-          "🚀 ~ file: index.js ~ line 119 ~ window.addEventListener ~ res",
-          res
-        );
-      }
+        },
+        {
+          inventoryId: 837,
+          placementId: "display_ads_4",
+        },
+        {
+          inventoryId: 838,
+          placementId: "display_ads_5",
+        },
+        {
+          inventoryId: 839,
+          placementId: "display_ads_6",
+        },
+        {
+          inventoryId: 840,
+          placementId: "display_ads_7",
+        },
+        {
+          inventoryId: 841,
+          placementId: "display_ads_8",
+        },
+      ];
+      const res = await sdk.requestAds(adUnits);
     });
   }, []);
 
