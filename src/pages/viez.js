@@ -117,13 +117,8 @@ export default function Home() {
               <JsonViewer src={resJson} />
             </Col>
           </Row>
+          <div id="display_ads_1"></div>
           <Row gutter={30}>
-            <Col className="gutter-row">
-              <div id="display_ads"></div>
-            </Col>
-            <Col className="gutter-row">
-              <div id="display_ads_1"></div>
-            </Col>
             <Col className="gutter-row">
               <div id="display_ads_2"></div>
             </Col>
