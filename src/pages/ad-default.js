@@ -28,15 +28,11 @@ export default function Home() {
           {
             inventoryId: 1,
             placementId: "display_ads",
-            options: {
-              adDefault: true,
-            },
           },
           {
             inventoryId: 2,
             placementId: "display_ads_1",
             options: {
-              adDefault: true,
               video: {
                 player: true,
                 preventPauseWhenClick: false,
@@ -47,44 +43,58 @@ export default function Home() {
           {
             inventoryId: 8,
             placementId: "display_ads_2",
-            options: {
-              adDefault: true,
-            },
           },
           {
             inventoryId: 9,
             placementId: "display_ads_3",
-            options: {
-              adDefault: true,
-            },
           },
           {
             inventoryId: 10,
             placementId: "display_ads_4",
-            options: {
-              adDefault: true,
-            },
           },
+          // {
+          //   inventoryId: 10,
+          //   placementId: "display_ads_4535",
+          // },
           {
             inventoryId: 20,
-            placementId: "display_ads_5",
+            // placementId: "display_ads_5",
             options: {
-              adDefault: true,
               video: {
                 player: false,
               },
               debug: true,
             },
           },
+          {
+            inventoryId: 1366,
+            placementId: "display_ads_6",
+          },
+          {
+            inventoryId: 1368,
+            placementId: "display_ads_7",
+          },
+          {
+            inventoryId: 1370,
+            placementId: "display_ads_8",
+          },
+          {
+            inventoryId: 1367,
+            placementId: "display_ads_9",
+          },
+          {
+            inventoryId: 1369,
+            placementId: "display_ads_10",
+          },
         ];
 
-        // const res = await sdk.requestAds(adUnits);
+        const res = await sdk.requestAds(adUnits);
 
-        // sdk.on("ALL_ADS_COMPLETED", (data) => {
-        //   console.log("ALL_ADS_COMPLETED: ", data);
-        // });
+        sdk.on("ALL_ADS_COMPLETED", (data) => {
+          console.log("ALL_ADS_COMPLETED: ", data);
+        });
 
-        // setResJson(res);
+        setResJson(res);
 
         var autoplayAllowed = false;
         var autoplayRequiresMute = false;
@@ -159,9 +169,9 @@ export default function Home() {
 
         var startEvent = "click";
 
-        // if (res?.videos?.length) {
-        //   checkUnmutedAutoplaySupport();
-        // }
+        if (res?.videos?.length) {
+          checkUnmutedAutoplaySupport();
+        }
       }
     });
   }, []);
@@ -170,13 +180,14 @@ export default function Home() {
     <LayoutOne title="Home">
       <Head>
         <script
+          defer
           type="text/javascript"
           dangerouslySetInnerHTML={{
-            __html: `window.AiactivSDK||(window.AiactivSDK={}),AiactivSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
+            __html: `window.AicactusSDK||(window.AicactusSDK={}),AicactusSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
               process.env.NODE_ENV === "development"
-                ? "http://localhost:9081/aiactiv-sdk.development.min.js"
+                ? "https://localhost:9081/aicactus-sdk.development.min.js"
                 : "https://cdn.aicactus.io/aicactus-sdk.staging.min.js"
-            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AiactivSDK.load( function(){AiactivSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["dmp"], debug: true}),AiactivSDK.callMethodsFromContainer();
+            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load( function(){AicactusSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["adnetwork"], debug: true}),AicactusSDK.callMethodsFromContainer();
             });
             `,
           }}
@@ -223,6 +234,21 @@ export default function Home() {
             </Col>
             <Col className="gutter-row">
               <div id="display_ads_4"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_6"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_7"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_8"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_9"></div>
+            </Col>
+            <Col className="gutter-row">
+              <div id="display_ads_10"></div>
             </Col>
             <Col className="gutter-row">
               <div

@@ -6,6 +6,19 @@ import * as React from "react";
 import LayoutOne from "../components/layouts/LayoutOne";
 
 export default function Home() {
+  React.useEffect(() => {
+    window.addEventListener("load", () => {
+      AiactivSDK.identify("12091906-01011992", {
+        name: "Grace Hopper",
+        email: "grace@usnavy.gov",
+      });
+      AiactivSDK.track("Article Completed", {
+        title: "How to Create a Tracking Plan",
+        course: "Intro to Analytics",
+      });
+    });
+  }, []);
+
   const handleTrack = () => {
     AiactivSDK.track("Article Completed", {
       title: "How to Create a Tracking Plan",
