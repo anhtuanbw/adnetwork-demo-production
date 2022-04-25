@@ -38,11 +38,20 @@ export default function Home() {
                 preventPauseWhenClick: false,
               },
               debug: true,
+              buyer: "google",
+              context: {
+                user: "display_ads_1",
+              },
             },
           },
           {
             inventoryId: 8,
             placementId: "display_ads_2",
+            options: {
+              context: {
+                user: "display_ads_2",
+              },
+            },
           },
           {
             inventoryId: 9,

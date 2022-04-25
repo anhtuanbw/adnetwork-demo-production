@@ -70,7 +70,7 @@ export default function Home() {
           placementId: "display_ads_8",
         },
       ];
-      const res = await sdk.requestAds(adUnits);
+      // const res = await sdk.requestAds(adUnits);
     });
   }, []);
 
@@ -99,9 +99,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{
             __html: `window.AicactusSDK||(window.AicactusSDK={}),AicactusSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
               process.env.NODE_ENV === "development"
-                ? "http://localhost:9081/aicactus-sdk.development.min.js"
+                ? "https://localhost:9081/aicactus-sdk.development.min.js"
                 : "https://cdn.aicactus.io/aicactus-sdk.staging.min.js"
-            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"e40697e0-7172-4814-a281-d2d93cdc18ef@web", type: ["dmp","adnetwork"], debug: true}),AicactusSDK.callMethodsFromContainer()});`,
+            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load(function(){AicactusSDK.initialize({containerId:"e40697e0-7172-4814-a281-d2d93cdc18ef@web", type: ["dmp"], debug: true}),AicactusSDK.callMethodsFromContainer()});`,
           }}
         ></script>
       </Head>
