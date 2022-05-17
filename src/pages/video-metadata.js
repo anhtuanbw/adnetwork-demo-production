@@ -27,7 +27,7 @@ export default function Home() {
 
         const adUnits = [
           {
-            inventoryId: 1,
+            inventoryId: 1599,
             placementId: "display_ads",
           },
           {
@@ -71,48 +71,6 @@ export default function Home() {
           },
         ];
 
-        // const adUnits = [
-        //   {
-        //     inventoryId: 24,
-        //     placementId: "display_ads_1",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 23,
-        //     placementId: "display_ads_2",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 22,
-        //     placementId: "display_ads_3",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 21,
-        //     placementId: "display_ads_4",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        // ];
         const res = await sdk.requestAds(adUnits);
 
         sdk.on("ALL_ADS_COMPLETED", (data) => {
@@ -211,7 +169,7 @@ export default function Home() {
               process.env.NODE_ENV === "development"
                 ? "https://localhost:9081/aicactus-sdk.development.min.js"
                 : "https://cdn.aicactus.io/aicactus-sdk.staging.min.js"
-            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load( function(){AicactusSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["adnetwork", "dmp"], debug: true}),AicactusSDK.callMethodsFromContainer();
+            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AicactusSDK.load( function(){AicactusSDK.initialize({containerId:"7540a8e6-bc4d-47e7-8ded-120f911b50d2@web", type: ["adnetwork"], debug: true}),AicactusSDK.callMethodsFromContainer();
             });
             `,
           }}
