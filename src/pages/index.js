@@ -29,6 +29,15 @@ export default function Home() {
           {
             inventoryId: 1,
             placementId: "display_ads",
+            options: {
+              context: {
+                page: {
+                  category: "",
+                  keywords: "abcb",
+                  description: "",
+                },
+              },
+            },
           },
           {
             inventoryId: 2,
