@@ -28,6 +28,20 @@ export default function Home() {
           {
             inventoryId: 1,
             placementId: "display_ads",
+            options: {
+              passBack: `<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+              <div id="gpt-passback">
+                <script>
+                  window.googletag = window.googletag || {cmd: []};
+                  googletag.cmd.push(function() {
+                      googletag.defineSlot('/6355419/Travel/Europe', [728, 90], 'gpt-passback')
+                        .addService(googletag.pubads());
+                      googletag.enableServices();
+                      googletag.display('gpt-passback');
+                  });
+                </script>
+              </div>`,
+            },
           },
           {
             inventoryId: 3,

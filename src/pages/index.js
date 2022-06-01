@@ -67,61 +67,12 @@ export default function Home() {
             placementId: "display_ads_5",
             options: {
               video: {
-                player: false,
-                size: {
-                  width: 1600,
-                  height: 900,
-                  // width: 1920,
-                  // height: 1080,
-                },
+                player: true,
               },
               debug: true,
             },
           },
         ];
-
-        // const adUnits = [
-        //   {
-        //     inventoryId: 24,
-        //     placementId: "display_ads_1",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 23,
-        //     placementId: "display_ads_2",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 22,
-        //     placementId: "display_ads_3",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        //   {
-        //     inventoryId: 21,
-        //     placementId: "display_ads_4",
-        //     options: {
-        //       video: {
-        //         usePlayer: false,
-        //       },
-        //       debug: true,
-        //     },
-        //   },
-        // ];
         const res = await sdk.requestAds(adUnits);
 
         sdk.on("ALL_ADS_COMPLETED", (data) => {
@@ -284,7 +235,7 @@ export default function Home() {
                   position: "relative",
                 }}
               >
-                <video
+                {/* <video
                   id="content_video"
                   className="video-js vjs-default-skin"
                   poster="https://googleads.github.io/videojs-ima/examples/posters/bbb_poster.jpg"
@@ -298,7 +249,7 @@ export default function Home() {
                     src="//commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                     type="video/mp4"
                   ></source>
-                </video>
+                </video> */}
               </div>
             </Col>
           </Row>
