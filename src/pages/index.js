@@ -209,6 +209,16 @@ export default function Home() {
             }}
           >
             <Col className="gutter-row" xs={24}>
+              <div id="aicactus-user-id"></div>
+            </Col>
+          </Row>
+          <Row
+            gutter={30}
+            style={{
+              marginBottom: 40,
+            }}
+          >
+            <Col className="gutter-row" xs={24}>
               <JsonViewer src={resJson} />
             </Col>
           </Row>
