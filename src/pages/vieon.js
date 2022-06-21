@@ -24,10 +24,6 @@ export default function Home() {
     window.addEventListener("load", async () => {
       if (window.AicactusSDK) {
         const sdk = window.AicactusSDK || {};
-        console.log(
-          "🚀 ~ file: vieon.js ~ line 27 ~ window.addEventListener ~ sdk",
-          sdk
-        );
 
         sdk.track("Article Completed", {
           title: "How to Create a Tracking Plan",
