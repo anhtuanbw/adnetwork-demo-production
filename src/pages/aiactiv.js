@@ -26,26 +26,13 @@ export default function Home() {
         const sdk = window.AiactivSDK || {};
         const adUnits = [
           {
-            inventoryId: 1,
+            inventoryId: 12,
             placementId: "display_ads",
             options: {
-              passBack: `<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-              <div id="gpt-passback">
-                <script>
-                  window.googletag = window.googletag || {cmd: []};
-                  googletag.cmd.push(function() {
-                      googletag.defineSlot('/6355419/Travel/Europe', [728, 90], 'gpt-passback')
-                        .addService(googletag.pubads());
-                      googletag.enableServices();
-                      googletag.display('gpt-passback');
-                  });
-                </script>
-              </div>`,
+              video: {
+                player: true,
+              },
             },
-          },
-          {
-            inventoryId: 3,
-            placementId: "display_ads_1",
           },
         ];
 
@@ -64,9 +51,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{
             __html: `window.AiactivSDK||(window.AiactivSDK={}),AiactivSDK.load=function(a){var b=document.createElement("script");b.async=!0,b.type="text/javascript",b.src="${
               process.env.NODE_ENV === "development"
-                ? "https://localhost:9081/aiactiv-sdk.development.min.js"
+                ? "https://sdk-cdn.aiactiv.io/aiactiv-sdk.min.js"
                 : "https://sdk-cdn.aiactiv.io/aiactiv-sdk.min.js"
-            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AiactivSDK.load( function(){AiactivSDK.initialize({containerId:"478878ae-2683-4dfe-8977-31f9a51013e6@web", type: ["adnetwork"], debug: true}),AiactivSDK.callMethodsFromContainer();
+            }",b.addEventListener?b.addEventListener("load",function(b){"function"==typeof a&&a(b)},!1):b.onreadystatechange=function(){("complete"==this.readyState||"loaded"==this.readyState)&&a(window.event)};let c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)},AiactivSDK.load( function(){AiactivSDK.initialize({containerId:"b8a3ccf2-5d49-4912-b2cc-87dc46e10277@web", type: ["adnetwork"], debug: true}),AiactivSDK.callMethodsFromContainer();
             });
             `,
           }}

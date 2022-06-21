@@ -243,6 +243,7 @@ export default function Home() {
                 id="display_ads_5"
                 style={{
                   position: "relative",
+                  width: 700,
                 }}
               >
                 {/* <video
