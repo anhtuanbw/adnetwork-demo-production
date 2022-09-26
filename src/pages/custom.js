@@ -12,16 +12,36 @@ const sleep = (ms) =>
     }, ms);
   });
 
+const INVENTORY_KEY = "INVENTORY_KEY";
+const CONTAINER_KEY = "CONTAINER_KEY";
+
 export default function Home() {
-  const [containerId, setContainerId] = React.useState(
-    "478878ae-2683-4dfe-8977-31f9a51013e6"
-  );
-  const [inventoryId, setInventoryId] = React.useState("6");
+  const [containerId, setContainerId] = React.useState("");
+  const [inventoryId, setInventoryId] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    const currentContainerId = localStorage.getItem(CONTAINER_KEY);
+    if (currentContainerId) {
+      setContainerId(currentContainerId);
+    } else {
+      setContainerId("478878ae-2683-4dfe-8977-31f9a51013e6");
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const currentInventoryId = localStorage.getItem(INVENTORY_KEY);
+    if (currentInventoryId) {
+      setInventoryId(currentInventoryId);
+    } else {
+      setInventoryId("6");
+    }
+  }, []);
 
   const onHandleContainerId = async (evt) => {
     setIsLoading(true);
     setContainerId(evt.target.value);
+    localStorage.setItem(CONTAINER_KEY, evt.target.value);
     await sleep(500);
     setIsLoading(false);
   };
@@ -29,6 +49,7 @@ export default function Home() {
   const onHandleInventoryId = async (evt) => {
     setIsLoading(true);
     setInventoryId(evt.target.value);
+    localStorage.setItem(INVENTORY_KEY, evt.target.value);
     await sleep(500);
     setIsLoading(false);
   };
