@@ -17,6 +17,7 @@ const CONTAINER_KEY = "CONTAINER_KEY";
 
 export default function Home() {
   const [containerId, setContainerId] = React.useState("");
+  console.log("🚀 ~ file: index.js:20 ~ Home ~ containerId:", containerId)
   const [inventoryId, setInventoryId] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
 
