@@ -24,7 +24,8 @@ export default function SubpagesSidebar() {
 
   const onSearch = (value) => {
     dispatch(setGlobalABUserId(value));
-    window.AicactusSDK.callMethodsFromContainer(value);
+    localStorage.setItem("SET_AB_USER_ID", value)
+    // window.AicactusSDK.callMethodsFromContainer(value);
   };
 
   return (

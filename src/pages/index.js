@@ -1,9 +1,9 @@
-import { Col, Row, Input } from "antd";
-import Head from "next/head";
-import * as React from "react";
+import { Col, Row, Input } from 'antd';
+import Head from 'next/head';
+import * as React from 'react';
 
-import LayoutOne from "../components/layouts/LayoutOne";
-import Container from "../components/other/Container";
+import LayoutOne from '../components/layouts/LayoutOne';
+import Container from '../components/other/Container';
 
 const sleep = (ms) =>
   new Promise((resolve) => {
@@ -12,13 +12,22 @@ const sleep = (ms) =>
     }, ms);
   });
 
-const INVENTORY_KEY = "INVENTORY_KEY";
-const CONTAINER_KEY = "CONTAINER_KEY";
+function setCookie(cName, cValue, expDays) {
+  let date = new Date();
+  date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+  const expires = 'expires=' + date.toUTCString();
+  document.cookie = cName + '=' + cValue + '; ' + expires + '; path=/';
+}
+
+const INVENTORY_KEY = 'INVENTORY_KEY';
+const CONTAINER_KEY = 'CONTAINER_KEY';
+const SET_AB_USER_ID = 'SET_AB_USER_ID';
 
 export default function Home() {
-  const [containerId, setContainerId] = React.useState("");
-  console.log("🚀 ~ file: index.js:20 ~ Home ~ containerId:", containerId)
-  const [inventoryId, setInventoryId] = React.useState("");
+  const [containerId, setContainerId] = React.useState('');
+  const [inventoryId, setInventoryId] = React.useState('');
+  const [userId, setUserId] = React.useState('');
+  console.log("🚀 ~ file: index.js:30 ~ Home ~ userId:", userId)
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -26,7 +35,7 @@ export default function Home() {
     if (currentContainerId) {
       setContainerId(currentContainerId);
     } else {
-      setContainerId("478878ae-2683-4dfe-8977-31f9a51013e6");
+      setContainerId('478878ae-2683-4dfe-8977-31f9a51013e6');
     }
   }, []);
 
@@ -35,7 +44,16 @@ export default function Home() {
     if (currentInventoryId) {
       setInventoryId(currentInventoryId);
     } else {
-      setInventoryId("6");
+      setInventoryId('6');
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const currentUserId = localStorage.getItem(SET_AB_USER_ID);
+    if (currentUserId) {
+      setUserId(currentUserId);
+    } else {
+      setUserId('');
     }
   }, []);
 
@@ -60,32 +78,21 @@ export default function Home() {
   return (
     <LayoutOne title="Home">
       <div className="shop-layout">
-        <Container type={"fluid"}>
+        <Container type={'fluid'}>
           <Row gutter={8}>
             <Col span={5}>
-              <Input
-                placeholder="Container ID"
-                onChange={onHandleContainerId}
-                value={containerId}
-              />
+              <Input placeholder="Container ID" onChange={onHandleContainerId} value={containerId} />
             </Col>
             <Col span={5}>
-              <Input
-                placeholder="Inventory ID"
-                onChange={onHandleInventoryId}
-                value={inventoryId}
-              />
+              <Input placeholder="Inventory ID" onChange={onHandleInventoryId} value={inventoryId} />
             </Col>
           </Row>
           <Row gutter={8}>
             <Col span={24}>
               {!isLoading && enabled ? (
-                <AdComponent
-                  containerId={containerId}
-                  inventoryId={inventoryId}
-                />
+                <AdComponent containerId={containerId} inventoryId={inventoryId} userId={userId} />
               ) : (
-                "Loading..."
+                'Loading...'
               )}
             </Col>
           </Row>
@@ -95,10 +102,10 @@ export default function Home() {
   );
 }
 
-const devURL = "https://localhost:9081/aiactiv-sdk.development.min.js";
-const prodURL = "https://sdk-cdn.aiactiv.io/aiactiv-sdk.min.js";
+const devURL = 'https://localhost:9081/aiactiv-sdk.development.min.js';
+const prodURL = 'https://sdk-cdn.aiactiv.io/aiactiv-sdk.min.js';
 
-function AdComponent({ containerId, inventoryId }) {
+function AdComponent({ containerId, inventoryId, userId }) {
   return (
     <div
       style={{
@@ -137,10 +144,17 @@ function AdComponent({ containerId, inventoryId }) {
           rel="stylesheet"
           href="https://googleads.github.io/videojs-ima/node_modules/videojs-contrib-ads/dist/videojs.ads.css"
         />
-        <link
-          rel="stylesheet"
-          href="https://googleads.github.io/videojs-ima/dist/videojs.ima.css"
-        />
+        <link rel="stylesheet" href="https://googleads.github.io/videojs-ima/dist/videojs.ima.css" />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `localStorage.setItem("aiactiv_v1.0.3_ajs_anonymous_id","${userId}"); ${setCookie(
+              'aiactiv_v1.0.3_ajs_anonymous_id',
+              userId,
+              300,
+            )}`,
+          }}
+        ></script>
       </Head>
 
       <Row gutter={8}>
